@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css\bootstrap.css">
+    
+</head> 
+
+<style>
+    body
+    {background: linear-gradient(to left, #8942a8, #ba382f); ;
+    padding: 10px;
+    }
+
+    #ui
+       {
+        background-color: white;
+        padding:20px;
+        opacity: 0.98;
+    }
+    
+    #my1
+    {
+        color: white;
+        font-weight: bold;
+        white-space: nowrap ;
+    }
+    #my
+    {
+    align-content: space-between;
+    justify-content: space-between;
+    position: relative;
+    color: white;
+    padding:50px;
+    border-radius: 20px;
+    opacity: 0.98;
+        
+    }
+    #mu
+    {
+        display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    color:black;
+    align-content: space-between;
+    padding: 50px;
+    
+    }
+     
+    
+</style>
+<body>
+    <div id="mu" >
+        
+        <div id="my">
+            <h1 id="my1">Student Registration</h1>
+            <div id="mu1">
+                
+                    <br><br>
+
+                <p> Just register yourself here....</p>
+                <br>
+                <p >And you are ready to go!!!</p>
+            
+            </div>
+    
+        </div>
+    <div class="container">
+        
+             
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div id="ui">
+                    <form class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>First Name</label>
+                                <input type="text" name="fname" class="form-control" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Last Name</label>
+                                <input type="text" name="lname" class="form-control" required>
+                            </div>
+                        </div>
+                       
+                        <label>Email-ID</label>
+                        <input type="email" name="email" class="form-control" required>
+                    
+                   
+                            
+                                <label>Contact Number</label>
+                                <input type="tel" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" class="form-control" required>
+                            
+                            
+                                
+                                 <label>Gender</label>
+                            <div class="form-check ">
+                                <input type="radio" class="form-check-input" name="gender" id="male" required>
+                                <label for="male" class="form-check-label">Male</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="gender" id="male">
+                                <label for="female" class="form-check-label">Female</label>
+                            </div>
+                            
+                                <label>Course</label>
+                                <input type="text" name="fname" class="form-control" required>
+                            
+                        
+                        <label>Address</label>
+                        <textarea name="" class="form-control" required></textarea>
+                        <br>
+                        
+                        <input type="submit" name="submit" value="Register" class="btn btn-primary btn-block btn-lg" >
+                    
+                        </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
