@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>animated background with pure css and html</title>
-	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
-	<link href="front.css" rel="stylesheet">
-</head>
-<body>
-	<div class="container">
-		<ul>
-			<li><a href="http://127.0.0.1:5500/Interview_Experience_Blog_App/html/login.html">Login</a></li>
-			<li><a href="http://127.0.0.1:5500/Interview_Experience_Blog_App/html/register.html " >Register</a></li>
-        </ul>
-		<h1>Welcome to </h1><br><h1 id="ii"> Interview Experience Blog Website</h1>
-        <p>Here you can share your Interview Experience and can also see the others view</p>
-	</div>
-	<div class="animation-area">
-		<ul class="box-area">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-	</div>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css\bootstrap.css">
+    
+</head> 
+
+<style>
+    body
+    {background:black ;
+    padding: 80px;
+    }
+
+    #ui
+       {
+        background-color: white;
+        padding:30px;
+        border-radius: 5%;
+    }
+    h2{
+        text-align: center;
+        color: aliceblue;
+    }
+	.btn-primary, .btn-secondary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #5d09c4 !important;
+	
+}
+.btn-secondary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #b80f0f !important;
+	margin: 1 1.5px;
+}
+.img-responsive
+{
+	
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:50%;
+}
+</style>
+<body> 
+    <h2>DA-IICT Interview Experiences</h2>   
+        <br>
+    <div class="container">
+        
+             
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div id="ui">
+                    <form class="form-group">
+                        <div class="row">
+                       
+							<img class="img-responsive" src="images1.png" alt="Image">
+
+                        <input type="submit" name="submit" value="Login" class="btn btn-primary btn-block btn-lg " >
+						<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    <br><br><label>.</label>
+                    <input type="submit" name="resubmit" value="Register" class="btn btn-secondary btn-lg btn-block " >
+                        </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

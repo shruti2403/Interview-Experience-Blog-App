@@ -4,120 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Register</title>
+    
     <link rel="stylesheet" href="css\bootstrap.css">
     
 </head> 
 
 <style>
     body
-    {background: linear-gradient(to left, #8942a8, #ba382f); ;
-    padding: 10px;
+    {background: black;
+    padding: 45px;
     }
 
     #ui
        {
         background-color: white;
-        padding:20px;
-        opacity: 0.98;
+        padding:40px;
+        border-radius: 5%;
     }
-    
-    #my1
-    {
-        color: white;
-        font-weight: bold;
-        white-space: nowrap ;
+    h2{
+        text-align: center;
+        color: rgb(19, 52, 82);
     }
-    #my
-    {
-    align-content: space-between;
-    justify-content: space-between;
-    position: relative;
-    color: white;
-    padding:50px;
-    border-radius: 20px;
-    opacity: 0.98;
-        
-    }
-    #mu
-    {
-        display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    color:black;
-    align-content: space-between;
-    padding: 50px;
-    
-    }
-     
     
 </style>
-<body>
-    <div id="mu" >
-        
-        <div id="my">
-            <h1 id="my1">Student Registration</h1>
-            <div id="mu1">
-                
-                    <br><br>
 
-                <p> Just register yourself here....</p>
-                <br>
-                <p >And you are ready to go!!!</p>
-            
-            </div>
-    
-        </div>
+<body> 
+     
+        
     <div class="container">
         
-             
+        
+        
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
                 <div id="ui">
+            <h2>DA-IICT Interview Experiences</h2>  
+<br>
                     <form class="form-group">
                         <div class="row">
                             <div class="col-lg-6">
-                                <label>First Name</label>
-                                <input type="text" name="fname" class="form-control" required>
+                                <!-- <label>First Name</label> -->
+                                <input type="text" name="fname" placeholder="First Name"class="form-control" required>
                             </div>
                             <div class="col-lg-6">
-                                <label>Last Name</label>
-                                <input type="text" name="lname" class="form-control" required>
+                                <!-- <label>Last Name</label> -->
+                                <input type="text" name="lname" placeholder="Last Name" class="form-control" required>
                             </div>
                         </div>
-                       
-                        <label>Email-ID</label>
-                        <input type="email" name="email" class="form-control" required>
-                    
-                   
-                            
-                                <label>Contact Number</label>
-                                <input type="tel" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" class="form-control" required>
-                            
-                            
-                                
-                                 <label>Gender</label>
-                            <div class="form-check ">
-                                <input type="radio" class="form-check-input" name="gender" id="male" required>
-                                <label for="male" class="form-check-label">Male</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" name="gender" id="male">
-                                <label for="female" class="form-check-label">Female</label>
-                            </div>
-                            
-                                <label>Course</label>
-                                <input type="text" name="fname" class="form-control" required>
-                            
-                        
-                        <label>Address</label>
-                        <textarea name="" class="form-control" required></textarea>
+                       <br>
+                        <!-- <label>Email-ID</label> -->
+                        <input type="email" name="email" placeholder="Email-ID" class="form-control" required>
                         <br>
-                        
+                        <!-- <label>Password</label> -->
+                        <input type="password" id="password" name="pass" placeholder="Password" class="form-control" required >
+                        <br>
+                            <!-- <label>Confirm Password</label> -->
+                            <input type="password" id="ConfirmPassword" placeholder="Confirm Password" name="pas5s" class="form-control" required >
+                            <br>
+                                <label>Select Degree</label>
+                            <!-- <label>Program of Study</label> -->
+                            <br>
+                            <input type="text" placeholder="Program Of Study" name="lname" class="form-control" required>
+                            <!-- <label>Graduation Year</label> --> <br>
+                            <input type="text" placeholder="Graduation Year" name="lname" class="form-control" required>
+                            <br>
+                            <a href="http://127.0.0.1:5500/Interview_Experience_Blog_App/html/login.html?email=vshruti2403%40gmail.com&pass=k&submit=Login">Already a user?</a>
+                            
+                            <br>
                         <input type="submit" name="submit" value="Register" class="btn btn-primary btn-block btn-lg" >
                     
                         </form>
@@ -126,4 +81,25 @@
     </div>
 </div>
 </body>
+<script>
+    function checkPassword()
+    {
+        let password = document.getElementById ("password").value;
+
+        let ConfirmPassword = document.getElementById("ConfirmPassword").value;
+
+        console.log(password,ConfirmPassword);
+
+        let message = document.getElementById("message");
+
+        if(password.length !=0)
+        {
+            if(password == ConfirmPassword)
+            {
+                message.textContent = "Password is Incorrect";
+            }
+            
+        }
+    }
+</script>
 </html>
