@@ -1,6 +1,6 @@
 body
 {
-    background-color: black;
+    background-color: rgb(182, 105, 105);
     color: aliceblue;
 }
 
@@ -60,4 +60,119 @@ display: table;}
 {
 display: flex;
 justify-content: center;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#list{
+    display: inline;
+}
+
+li{
+    text-align: left;
+    padding: 5px;
+}
+
+.btns{
+    position: absolute;
+    top: 270px;
+    width: 240px;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.addtsk{
+    border: solid;
+    margin: 2px;
+    font-size: 12px;
+    border-color: rgb(131, 184, 51);
+    background-color: #ffffff;
+}
+
+.addtsk:hover{
+    transform: scale(1.1);
+    color: white;
+    background-color: rgb(131, 184, 51);
+}
+
+.deltsk{
+    border: solid;
+    margin: 2px;
+    font-size: 12px;
+    border-color: red;
+    background-color: #ffffff;
+}
+
+.deltsk:hover{
+    transform: scale(1.1);
+    color: white;
+    background-color: red;
+}
+
+#edit{
+    position: absolute;
+    left: 170px;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: #ffffff;
+}
+
+#edit:hover{
+    color: rgb(155, 155, 51);
+    transform: scale(1.08);
+}
+
+#trash{
+    position: absolute;
+    left: 200px;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: #120d0d;
+}
+
+#trash:hover{
+    color:red;
+    transform: scale(1.08);
+}
+
+#add{
+    border-color: greenyellow;
+    background-color: rgb(255, 255, 0);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+}
+
+#add:hover{
+    background-color: rgb(0,255,0);
+    transform: scale(1.2);
+    box-shadow: 4px 4px 12px #000000;
+}
+#menu{
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 40px;
+    width: 240px;
+    height: 300px;
+    border: solid;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 10px;
+}
+
+input{
+    background-color: #ffff;
 }
