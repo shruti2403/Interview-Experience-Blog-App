@@ -1,6 +1,6 @@
 body
 {
-    background-color: rgb(182, 105, 105);
+    background-color: rgb(0, 0, 0);
     color: aliceblue;
 }
 
@@ -15,11 +15,11 @@ body
     .flex-container > div {
 
     background-color: solid black;
-    border: 50 px red;
+    /* border: 40 px red; */
     justify-content: flex-start;
     border-color: aqua;
-    margin: 10px;
-    padding: 20px;
+    margin: 0px;
+    padding: 10px;
     font-size: 20px;
     
     }
@@ -64,8 +64,9 @@ justify-content: center;
 
 ul{
     list-style-type: none;
-    margin: 0;
+    margin: 50px;
     padding: 0;
+    width:500px
 }
 
 #list{
@@ -82,12 +83,12 @@ li{
     top: 270px;
     width: 240px;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #3a0909;
 }
 
 .addtsk{
     border: solid;
-    margin: 2px;
+    margin: 5px;
     font-size: 12px;
     border-color: rgb(131, 184, 51);
     background-color: #ffffff;
@@ -121,11 +122,11 @@ li{
     height: 30px;
     width: 30px;
     border: none;
-    background-color: #ffffff;
+    background-color: #f9f4f4;
 }
 
 #edit:hover{
-    color: rgb(155, 155, 51);
+    color: rgb(6, 6, 0);
     transform: scale(1.08);
 }
 
@@ -162,17 +163,70 @@ li{
 #menu{
     position: relative;
     display: inline-block;
-    margin-top: 30px;
-    margin-left: 40px;
-    width: 240px;
+    /* justify-content: center; */
+    margin-top: 0px;
+    margin-left: 260px;
+    width: 825px;
     height: 300px;
     border: solid;
     border-radius: 10px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #6e3d3d;
     box-shadow: 3px 3px 10px;
+}
+#check
+{
+    display: none;
+}
+
+#check :checked ~ .content
+{
+    display: block;
+} 
+
+label{
+    display: inline-block;
+    color: #000000;
+    text-decoration: underline;
+}
+.content
+{
+    display: none;
+}
+.check
+{
+    display: inline-block;
 }
 
 input{
     background-color: #ffff;
 }
+.nme ,.me
+{
+    color: #000000;
+}
+#taskss li
+{
+    color: #000000;
+}
+.text {
+    font-size: 24px;
+  }
+  .moreText {
+    display: none;
+  }
+  .read-more-btn {
+    padding: 15px 60px;
+    background-color: rgb(149, 170, 197);
+    color: rgb(53, 49, 49);
+    border: none;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .text.show-more .moreText {
+    display: inline;
+  }
+  .text.show-more .dots {
+    display: none;
+  }
