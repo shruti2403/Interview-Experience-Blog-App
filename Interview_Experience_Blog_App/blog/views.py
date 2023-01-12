@@ -5,8 +5,8 @@ from django.contrib import messages
 
 # Create your views here.
 
-def home(request):
-    return render(request, "Interview_Experience/front.html")
+def login(request):
+    return render(request, "Interview_Experience/login.html")
 
 def register(request):
     if request.method == "POST":
