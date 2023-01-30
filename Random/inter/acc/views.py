@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 from .models import *
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import  CreateUserForm
@@ -16,16 +17,19 @@ def front(request):
     # return HttpResponse('Front Page')
 
 def registerPage(request):
-    form = CreateUserForm()
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created for' + user )
-            return redirect('login')
-    context = {'form':form}
-    return render(request, 'acc/register.html',context)
+    if request.user.is_authenticated:
+        return redirect('front')
+    else:
+        form = CreateUserForm()
+        if request.method == 'POST':
+            form = CreateUserForm(request.POST)
+            if form.is_valid():
+                form.save()
+                user = form.cleaned_data.get('username')
+                messages.success(request, 'Account was created for' + user )
+                return redirect('login')
+        context = {'form':form}
+        return render(request, 'acc/register.html',context)
 # 
 def loginPage(request):
     # context = {}
@@ -38,6 +42,12 @@ def loginPage(request):
         if user is not None:
             login(request , user)
             return redirect('cust')
+
+        else:
+            messages.info(request , 'Username OR Password is incorrect')
+            return render(request, 'acc/login.html')
+
+
     return render(request, 'acc/login.html')
 
 
@@ -61,6 +71,12 @@ def main_customers(request):
     customers = main_customer.objects.all()
     context = {'customers':customers}
     return render (request, 'acc/customer.html',context)
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
+
+@login_required(login_url = 'login')
 
 def jobtype(request):
     jobtypes = Job_type.objects.all()
