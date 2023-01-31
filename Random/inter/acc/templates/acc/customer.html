@@ -7,25 +7,20 @@
 <div class="row mb-2">
   <div class="col-md-6">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-      <div class="col p-4 d-flex flex-column position-static">
+      <!-- <div class="col p-4 d-flex flex-column position-static"> -->
         <table class="card card-body">
           <tr>
-            <th>Experiences</th>
+            {% for i in customers %}
+            <td>{{i.comp_name}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.college}}</td>
+            {% endfor %}
           </tr>
           </table>
-          <table>
-          {% for i in customers %}
-          <td>{{i.comp_name}}</td>
-          <td>{{i.name}}</td>
-          <td>{{i.college}}</td>
-          {% endfor %}
-
-          
-        </table>
       </div>
       <div class="col-auto d-none d-lg-block">
       </div>
-    </div>
+    <!-- </div> -->
   </div>
   </div>
 </main>
