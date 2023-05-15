@@ -6,7 +6,7 @@ from .models import *
 
 # admin.site.register(customer)
 admin.site.register(new)
-admin.site.register(main_customer)
+admin.site.register(interviewee)
 admin.site.register(job_profile)
 admin.site.register(Job_type)
 admin.site.register(customer_comp)

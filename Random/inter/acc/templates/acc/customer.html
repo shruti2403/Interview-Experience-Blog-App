@@ -1,33 +1,85 @@
 {% extends 'acc/main.html' %}
 
 {% block content %}
+<style>
+.read-more
+{
+  display: inline-block;
+  color: white;
+  background-color: #2196f3;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+.bg-dark text-secondary px-4 py-5 text-center .showContent p
+{
+  height:auto
+}
+.bg-dark text-secondary px-4 py-5 text-center .showContent a.read-more 
+{
+  background-color: red;
+}
+.para
+{
+  font-size: 15px;
+  line-height: 28px;
+  height: 90px;
+  overflow: hidden;
+}
 
+</style>
 <main class="container">
-  <div>
-<div class="row mb-2">
-  <div class="col-md-6">
-    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+  <!-- <div> -->
+<!-- <div class="row mb-2"> -->
+  <!-- <div class="col-md-6"> -->
+    <!-- <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"> -->
       <!-- <div class="col p-4 d-flex flex-column position-static"> -->
-        <table class="card card-body">
-          <tr>
-            {% for i in customers %}
-            <td>{{i.comp_name}}</td>
-            <td>{{i.name}}</td>
-            <td>{{i.college}}</td>
-            {% endfor %}
-          </tr>
-          </table>
-      </div>
-      <div class="col-auto d-none d-lg-block">
-      </div>
+        <!-- <table class="card card-body"> -->
+          <!-- <tr> -->
+            <!-- {% for i in customers %} -->
+            <!-- <td>{{i.comp_name}}</td> -->
+            <!-- <td>{{i.name}}</td> -->
+            <!-- <td>{{i.college}}</td> -->
+            <!-- {% endfor %} -->
+          <!-- </tr> -->
+          <!-- </table> -->
+      <!-- </div> -->
+      <!-- <div class="col-auto d-none d-lg-block"> -->
+      <!-- </div> -->
     <!-- </div> -->
+  <!-- </div> -->
+  <!-- </div> -->
+  <div class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="py-5">
+      {% for i in customers %}
+      <h1 class="display-5 fw-bold text-white">{{i.comp_name}} : {{i.jobTypes}} </h1>
+      <h3 class="display-5 text-grey">{{i.name}},{{i.course}}</h3>
+      <h3 class="display-10 text-white">{{i.jobProfiles}}</h3>
+      <h6 class="display-10 text-white">{{i.Date_Created}}</h6>
+      <div class="col-lg-6 mx-auto">
+        <p class="para">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a href ="javascript:void();" class="read-more">Read More</a>
+          <!-- <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Custom button</button> -->
+          <div></div>
+          <!-- <button type="button" class="btn btn-outline-light btn-lg px-4">Secondary</button> -->
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
+  {% endblock content %}
 </main>
   
 
-      <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" ></script>
+  <script>
+    $(".read-more").on('click',function()
+    {
+      $(this).parent().toggleClass("showContent");
+    });
+  </script>
+
         
     
-{% endblock content %}

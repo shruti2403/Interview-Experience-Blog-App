@@ -10,6 +10,19 @@ class customer (models.Model):
     Views = models.CharField(max_length=200, null=True)
     Date_Created =models.DateTimeField(auto_now_add = True, null=True) 
 
+class interviewee (models.Model):
+    JOB_TYPES = (('Summer Internship', 'Summer Internship'),
+        ('Winter Internship and Job', 'Winter Internship and Job'),
+        ('Job only','Job only'))
+
+    comp_name = models.CharField(max_length=200, null=True)
+    jobTypes = models.CharField(max_length=200, null=True, choices=JOB_TYPES)
+    name = models.CharField(max_length=200, null=True)
+    course = models.CharField(max_length=200, null=True)
+    jobProfiles = models.CharField(max_length=20000, null=True)
+    Views = models.CharField(max_length=200, null=True)
+    Date_Created =models.DateTimeField(auto_now_add = True, null=True) 
+
 
     def __str__(self):
         return self.name

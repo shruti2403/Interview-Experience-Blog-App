@@ -53,7 +53,19 @@ def loginPage(request):
 
 
 def new(request):
-    return render(request , 'acc/new.html')
+    # if request.user.is_authenticated:
+        return redirect('cust')
+    # else:
+        form = CreateUserForm()
+        if request.method == 'POST':
+            form = CreateUserForm(request.POST)
+            if form.is_valid():
+                form.save()
+                user = form.cleaned_data.get('username')
+                messages.success(request, 'Account was created for' + user )
+                return redirect('login')
+        context = {'form':form}
+        return render(request, 'acc/new.html',context)
 
 # def register(request):
     # return HttpResponse('Customer Page')
@@ -66,11 +78,12 @@ def new(request):
     # data = {'customers' : customers , 'comp' : company, 'jobT' : jobtype , 'jobP': jobprofile}
     # return render(request, "acc/customer.html", data)
 
-def main_customers(request):
+def interviewees(request):
     # cust = main_customer.objects.get(id = pk_test)
-    customers = main_customer.objects.all()
+    customers = interviewee.objects.all()
     context = {'customers':customers}
     return render (request, 'acc/customer.html',context)
+
 
 def logoutUser(request):
     logout(request)
